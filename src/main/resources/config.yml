@@ -1,0 +1,26 @@
+# You can use the following:
+
+
+messages:
+  # - %player%: Player's name
+  welcome: 'Welcome to the server %player%!' # This is sent to a player when they join for the first time.
+  join: 'Welcome, %player%!'
+  quit: 'Goodbye, %player%!'
+  you-Must-Be-A-Player: 'You must be a player to use this command!'
+  # %player% will be replaced with the player's name
+  # %permission% will be replaced with the missing permission
+  no-Permission: '%player% does not have permission to use this command! Missing permission: %permission%!'
+  # %gamemode% will be replaced with the gamemode
+  # %player% will be replaced with the player's name
+  gamemode:
+      invalid: 'Invalid gamemode. Please use one of the following: survival, creative, adventure, spectator' # %gamemode% will not be available
+      player-not-found: 'Player not found!' # %player% & %gamemode% will not be available
+      self: 'Your gamemode has been changed to %gamemode%!'
+      selfother: 'Your gamemode has been changed to %gamemode% by %player%!'
+      other: '%player%''s gamemode has been changed to %gamemode%!'
+  spawn:
+      # %x$, %y%, %z%, %world% will be replaced with the spawn location
+      # %player% will be replaced with the player's name
+      set: 'Spawn location has been set!'
+      teleport: 'Teleported to spawn!'
+      no-location: 'Spawn location has not been set!'

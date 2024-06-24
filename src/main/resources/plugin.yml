@@ -1,0 +1,65 @@
+name: Estopia
+version: '${project.version}'
+main: net.estopia.estopia.Estopia
+api-version: '1.20'
+commands:
+  gamemode:
+    description: Change your gamemode or another player's gamemode
+    usage: /<command> <gamemode> [player]
+    permission: estopia.gamemode
+    aliases:
+      - gm
+  setspawn:
+    description: Set the spawn location
+    usage: /<command>
+    permission: estopia.setspawn
+    aliases:
+      - setspawnpoint
+  spawn:
+    description: Teleport to the spawn location
+    usage: /<command>
+    permission: estopia.spawn
+    aliases:
+      - spawnpoint
+permissions:
+    estopia.gamemode:
+        description: Allows the player to change their gamemode or another player's gamemode
+        children:
+            estopia.gamemode.self: true
+            estopia.gamemode.other: true
+    estopia.gamemode.self:
+        description: Allows the player to change their own gamemode
+        children:
+            estopia.gamemode.self.survival: true
+            estopia.gamemode.self.creative: true
+            estopia.gamemode.self.adventure: true
+            estopia.gamemode.self.spectator: true
+    estopia.gamemode.self.survival:
+        description: Allows the player to change their own gamemode to survival
+    estopia.gamemode.self.creative:
+        description: Allows the player to change their own gamemode to creative
+    estopia.gamemode.self.adventure:
+        description: Allows the player to change their own gamemode to adventure
+    estopia.gamemode.self.spectator:
+        description: Allows the player to change their own gamemode to spectator
+    estopia.gamemode.other:
+        description: Allows the player to change another player's gamemode
+        children:
+            estopia.gamemode.other.survival: true
+            estopia.gamemode.other.creative: true
+            estopia.gamemode.other.adventure: true
+            estopia.gamemode.other.spectator: true
+    estopia.gamemode.other.survival:
+        description: Allows the player to change another player's gamemode to survival
+    estopia.gamemode.other.creative:
+        description: Allows the player to change another player's gamemode to creative
+    estopia.gamemode.other.adventure:
+        description: Allows the player to change another player's gamemode to adventure
+    estopia.gamemode.other.spectator:
+        description: Allows the player to change another player's gamemode to spectator
+    estopia.setspawn:
+        description: Allows the player to set the spawn location
+        default: true
+    estopia.spawn:
+        description: Allows the player to teleport to the spawn location
+        default: true
